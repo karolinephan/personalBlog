@@ -13,9 +13,10 @@ import { PostComponent } from './components/post/post.component';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
-import { AboutMeComponent } from './components/about-me/about-me.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoComponent } from './components/todo/todo.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,10 @@ import { TodoComponent } from './components/todo/todo.component';
     PostListComponent,
     NavbarComponent,
     HomeComponent,
-    AboutMeComponent,
     TodoListComponent,
-    TodoComponent
+    TodoComponent,
+    ContactComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,

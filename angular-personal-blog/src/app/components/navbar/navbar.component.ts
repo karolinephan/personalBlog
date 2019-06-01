@@ -13,19 +13,19 @@ export class NavbarComponent implements OnInit {
   constructor(private router: Router) { }
 
   home() {
-    this.router.navigate(['home']);
+    this.router.navigate(['/']);
   }
 
-  posts() {
-    this.router.navigate(['/post']);
+  contactMe() {
+    this.router.navigate(['contactMe']);
   }
 
-  aboutMe() {
-    this.router.navigate(['/aboutMe']);
+  portfolio() {
+    this.router.navigate(['/portfolio']);
   }
 
-  todoList() {
-    this.router.navigate(['/todoList']);
+  blog() {
+    this.router.navigate(['/blog']);
   }
 
 

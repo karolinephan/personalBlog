@@ -1,7 +1,7 @@
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">{{post.postTitle | uppercase}}</h1>
-    <markdown [data]="post.postBody"></markdown>
 
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{post.postTitle | uppercase}}</h5>
+    <markdown [data]="post.postBody"></markdown>
   </div>
-</div> 
+</div>

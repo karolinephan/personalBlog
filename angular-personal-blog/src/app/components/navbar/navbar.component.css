@@ -33,7 +33,7 @@ nav ul li a:before {
 }
 
 nav ul li a:hover {
-    color: #555;
+    color: rgb(216, 184, 3);
 }
   
 /* stroke animation */
@@ -51,7 +51,7 @@ nav.stroke ul li a:after{
     width: 0%;
     content: '.';
     color: transparent;
-    background: #aaa;
+    background: rgb(180, 97, 86);
     height: 1px;
 }
 
