@@ -1,7 +1,8 @@
 import { Request, Response } from "express";  //import request, response for HTTP req, res
 import { UserController } from "../controllers/userController";
-import { PostController } from "../controllers/postController"
-import { CommentController } from "../controllers/commentController"
+import { PostController } from "../controllers/postController";
+import { CommentController } from "../controllers/commentController";
+import { TodoController } from "../controllers/todoController"
 
 export class Routes {
 
@@ -11,6 +12,8 @@ export class Routes {
     public postController: PostController = new PostController();
     //create new PostController object
     public commentController: CommentController = new CommentController();
+    //create new TodoController object
+    public todoController: TodoController = new TodoController();
 
 
     public routes(app): void {
@@ -34,7 +37,12 @@ export class Routes {
 
         app.route('/post/:postId')
             // get a post by post ID
-            .get(this.postController.getPostById);
+            .get(this.postController.getPostById)
+            //update a post
+            .put(this.postController.updatePost)
+            //delete a post
+            .delete(this.postController.deletePost);
+
 
         //------COMMENT------
         app.route('/comment')
@@ -45,5 +53,19 @@ export class Routes {
             .get(this.commentController.getCommentsByPostId);
 
 
+        //------TODO-----
+        app.route('/todo')
+            //post a new todo
+            .post(this.todoController.addTodo)
+            //list all todos
+            .get(this.todoController.listTodos);
+
+        app.route('/todo/:todoId')
+            // get a post by todo ID
+            .get(this.todoController.getTodoById)
+            //update a post
+            .put(this.todoController.updateTodo)
+            //delete a post
+            .delete(this.todoController.deleteTodo);
     }
 }

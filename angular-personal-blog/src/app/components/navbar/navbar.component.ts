@@ -24,6 +24,10 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/aboutMe']);
   }
 
+  todoList() {
+    this.router.navigate(['/todoList']);
+  }
+
 
   ngOnInit() {
   }
