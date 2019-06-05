@@ -11,5 +11,11 @@ export const postSchema = new Schema({
     },
     postBody: {
         type: String            
+    },
+    postTag: {
+        type: String            
+    },
+    postImageUrl: {
+        type: String            
     }
 });

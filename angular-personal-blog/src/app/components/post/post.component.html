@@ -1,2 +1,7 @@
-<h5>{{post.postTitle | uppercase}}</h5>
-<markdown [data]="post.postBody"></markdown>
+<div class="card">
+    <img class="card-img-top" src="{{post.postImageUrl}}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{post.postTitle | uppercase}}</h5>
+        <markdown [data]="post.postBody"></markdown>
+    </div>
+</div>

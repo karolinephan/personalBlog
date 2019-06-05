@@ -1,14 +1,41 @@
 .container {
-    padding-top: 30px;
-    text-align: center;
-}
-
-img {
-    width: 100%;
-    border-radius: 50%;
+    max-width: 90%;
+    padding-top: 10px;
 }
 
 h5, p {
     text-align: center;
 }
+
+img {
+    opacity: 0.8;
+}
+
+h1 { 
+    color: black; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 50px; 
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: center; 
+}
+
+
+h2 { 
+    color: rgb(34, 34, 34); 
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 60px; 
+    font-weight: 400; 
+    line-height: 32px; 
+    margin: 0 0 72px; 
+    text-align: center; 
+}
+
+.pageBody {
+    background-color:white;
+    margin-top: 20px;
+}
+
+
 
