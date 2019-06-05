@@ -1,0 +1,16 @@
+h5 {
+    color: #588c7e;
+}
+
+.link-text{
+    color: #588c7e;
+    text-decoration: underline;
+}
+
+.todoButton{
+    margin-top: 700px;
+    background-color:#f2e394;
+    color: black;
+    font-family: "Verdana", Sans-serif;
+}
+

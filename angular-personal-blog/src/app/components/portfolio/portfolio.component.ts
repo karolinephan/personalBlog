@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+//import router for routing
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  blog() {
+    this.router.navigate(['/blog']);
+  }
+
+  todoList() {
+    this.router.navigate(['/todoList']);
+  }
 
   ngOnInit() {
   }
