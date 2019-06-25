@@ -1,30 +1,44 @@
-<h2 class="text-center pt-3">My To-do List</h2>
-<div class="container">
-  <div class="card-columns">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title that wraps to a new line</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-          content.
-          This content is a little bit longer.</p>
-      </div>
-    </div>
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
+<!--title-->
+<h1>&#x261E; To-do List &#x2611;</h1>
+
+<!--form-->
+<div class="d-flex justify-content-center">
+    <div class="card form-container">
+        <div class="card-header text-center">
+            &#x2b; ADD A TO-DO
+        </div>
         <div class="card-body">
-          <h5 class="card-title">Card title that wraps to a new line</h5>
-          <p class="card-text">abc</p>
+            <form>
+                <div class="form-group row">
+                    <div class="form-group col-md-6">
+                        <!--todo name-->
+                        <label for="inputTodoName">To-do Name</label>
+                        <input type="text" class="form-control" id="inputTodoName">
+                        <!--start date-->
+                        <label for="inputStartDate">Start Date</label>
+                        <input type="date" class="form-control" id="inputStartDate">
+                        <!--end date-->
+                        <label for="inputEndDate">End Date</label>
+                        <input type="date" class="form-control" id="inputEndDate">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <!--description-->
+                        <label for="inputTodoDescription">Description</label>
+                        <textarea class="form-control" id="inputTodoDescription" rows="4"></textarea>
+                        <br>
+                        <!--submit button-->
+                        <button type="button" class="btn btn-lg btn-block btn-outline-dark">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
-      </div>
-      <div class="card">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title that wraps to a new line</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-              content.
-              This content is a little bit longer.</p>
-          </div>
-        </div>
-  </div>
+    </div>
 </div>
+
+
+<!--list all todo cards-->
+
+    <div *ngFor="let todo of todos">
+        <app-todo [todo]="todo"></app-todo>
+    </div>

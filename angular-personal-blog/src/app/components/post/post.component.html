@@ -1,7 +1,8 @@
-<div class="card">
-    <img class="card-img-top" src="{{post.postImageUrl}}" alt="Card image cap">
+<div class="card border-light">
+    <img *ngIf="post.postImageUrl" class="card-img-top" src="{{post.postImageUrl}}">
     <div class="card-body">
         <h5 class="card-title">{{post.postTitle | uppercase}}</h5>
-        <markdown [data]="post.postBody"></markdown>
+        <p>{{post.postSummary}}</p>
+        <!--<markdown [data]="post.postBody"></markdown>-->
     </div>
 </div>

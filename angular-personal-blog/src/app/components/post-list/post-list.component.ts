@@ -26,10 +26,20 @@ export class PostListComponent implements OnInit {
   }
 
   //call addPost from service to add new post to server
-  addPost(postTitle: HTMLInputElement, postBody: HTMLInputElement, postTag: HTMLInputElement, postImageUrl: HTMLInputElement) {
+  addPost(
+    postTitle: HTMLInputElement, 
+    postBody: HTMLInputElement, 
+    postTag: HTMLInputElement, 
+    postImageUrl: HTMLInputElement,
+    postSummary: HTMLInputElement) {
 
     // create new post from the user input
-    let newPost = new Post (postTitle.value, postBody.value, postTag.value, postImageUrl.value);
+    let newPost = new Post (
+      postTitle.value, 
+      postBody.value, 
+      postTag.value, 
+      postImageUrl.value,
+      postSummary.value);
 
     this.postService.addPost(newPost)
     .subscribe(postResult => this.posts.push(postResult));

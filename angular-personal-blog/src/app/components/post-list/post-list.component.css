@@ -1,5 +1,5 @@
 .container {
-    max-width: 90%;
+    max-width: 80%;
     padding-top: 10px;
 }
 
@@ -21,19 +21,8 @@ h1 {
     text-align: center; 
 }
 
-
-h2 { 
-    color: rgb(34, 34, 34); 
-    font-family: 'Open Sans', sans-serif; 
-    font-size: 60px; 
-    font-weight: 400; 
-    line-height: 32px; 
-    margin: 0 0 72px; 
-    text-align: center; 
-}
-
 .pageBody {
-    background-color:white;
+    background-color:rgb(245, 245, 245);
     margin-top: 20px;
 }
 

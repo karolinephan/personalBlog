@@ -17,5 +17,8 @@ export const postSchema = new Schema({
     },
     postImageUrl: {
         type: String            
+    },
+    postSummary: {
+        type: String            
     }
 });

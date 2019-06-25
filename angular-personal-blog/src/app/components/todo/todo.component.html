@@ -1,3 +1,9 @@
-<p>
-  todo works!
-</p>
+<div class="card text-center">
+    <div class="card-header">
+        {{todo.todoName | uppercase}}
+    </div>
+    <div class="card-body">
+        <markdown [data]="todo.todoDescription"></markdown>
+        <a href="#" class="btn btn-primary btn-outline-light" style="background-color: #588c7e">Go somewhere</a>
+    </div>
+</div>

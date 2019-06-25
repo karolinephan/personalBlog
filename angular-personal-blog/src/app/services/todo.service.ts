@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-//import Post class from post model
-import { Post } from '../models/post.model';
+//import Todo class from todo model
+import { Todo } from '../models/todo.model';
 //import Observable for service
 import { Observable, of } from 'rxjs';
 //import HTTP client
@@ -9,23 +9,22 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-
-export class PostService {
+export class TodoService {
 
   //server routes
-  private getPostUrl = 'http://localhost:8080/post';
-  private addPostUrl = 'http://localhost:8080/post';
+  private getTodoUrl = 'http://localhost:8080/todo';
+  private addTodoUrl = 'http://localhost:8080/todo';
 
   //inject HttpCLient to constructor
   constructor( private http: HttpClient) { }
 
   //get all posts from server
-  getPost(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.getPostUrl);
+  getTodos(): Observable<Todo[]> {
+    return this.http.get<Todo[]>(this.getTodoUrl);
   }
 
   //add a new post to server
-  addPost(post: Post): Observable<Post> {
-    return this.http.post<Post>(this.addPostUrl, post);
+  addTodo(todo: Todo): Observable<Todo> {
+    return this.http.post<Todo>(this.addTodoUrl, todo);
   }
 }
