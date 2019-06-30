@@ -13,22 +13,25 @@
                     <div class="form-group col-md-6">
                         <!--todo name-->
                         <label for="inputTodoName">To-do Name</label>
-                        <input type="text" class="form-control" id="inputTodoName">
+                        <input type="text" class="form-control" #inputTodoName>
                         <!--start date-->
                         <label for="inputStartDate">Start Date</label>
-                        <input type="date" class="form-control" id="inputStartDate">
+                        <input type="date" class="form-control" #inputStartDate>
                         <!--end date-->
                         <label for="inputEndDate">End Date</label>
-                        <input type="date" class="form-control" id="inputEndDate">
+                        <input type="date" class="form-control" #inputEndDate>
                     </div>
 
                     <div class="form-group col-md-6">
                         <!--description-->
                         <label for="inputTodoDescription">Description</label>
-                        <textarea class="form-control" id="inputTodoDescription" rows="4"></textarea>
+                        <textarea class="form-control" #inputTodoDescription rows="4"></textarea>
                         <br>
                         <!--submit button-->
-                        <button type="button" class="btn btn-lg btn-block btn-outline-dark">Submit</button>
+                        <button type="button" class="btn btn-lg btn-block btn-outline-dark"
+                            (click)="addTodo(inputTodoName,inputTodoDescription,inputStartDate,inputEndDate);">
+                            Submit
+                        </button>
                     </div>
                 </div>
             </form>
@@ -38,7 +41,10 @@
 
 
 <!--list all todo cards-->
-
-    <div *ngFor="let todo of todos">
-        <app-todo [todo]="todo"></app-todo>
-    </div>
+<div *ngFor="let todo of todos">
+    <!--input for child and output from child are all in html-->
+    <!--[todo] is input for todo-->
+    <!--(deletedEmitter) is output from todo. when deletedEmitter emited, parent calls ngOnInit-->
+    <app-todo [todo]="todo" (deletedEmitter)="ngOnInit()">
+    </app-todo>
+</div>

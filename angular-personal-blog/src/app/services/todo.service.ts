@@ -14,17 +14,26 @@ export class TodoService {
   //server routes
   private getTodoUrl = 'http://localhost:8080/todo';
   private addTodoUrl = 'http://localhost:8080/todo';
+  private deleteTodoUrl = 'http://localhost:8080/todo/';
 
   //inject HttpCLient to constructor
   constructor( private http: HttpClient) { }
 
-  //get all posts from server
+  //get all todos from server
   getTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>(this.getTodoUrl);
   }
 
-  //add a new post to server
+  //add a new todo to server
   addTodo(todo: Todo): Observable<Todo> {
     return this.http.post<Todo>(this.addTodoUrl, todo);
   }
+
+  //delete a todo
+  deleteTodo(todoId: String): Observable<{}> {
+    console.log("call deleteTodo in service" + todoId);
+    return this.http.delete(this.deleteTodoUrl + todoId)
+    
+  }
 }
+

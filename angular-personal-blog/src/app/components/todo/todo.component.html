@@ -1,9 +1,32 @@
-<div class="card text-center">
+<div class="card">
     <div class="card-header">
-        {{todo.todoName | uppercase}}
+        <div class="row">
+            <div class="col-10">
+                {{todo.todoName | uppercase}}
+                <p class="card-text">{{todo.todoDescription}}</p>
+            </div>
+            <div class="col-2 text-right">
+                <!--delete button-->
+                <button type="button" class="btn btn-light" (click)="deleteTodo()">&#x2718;</button>
+            </div>
+        </div>
     </div>
+
     <div class="card-body">
-        <markdown [data]="todo.todoDescription"></markdown>
-        <a href="#" class="btn btn-primary btn-outline-light" style="background-color: #588c7e">Go somewhere</a>
+        <!--add checklist form-->
+
+        <!--list all checklists-->
+        <div *ngFor="let checklist of checklists">
+            <app-checklist [checklist]="checklist"></app-checklist>
+        </div>
     </div>
 </div>
+
+
+<div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button">Button</button>
+        </div>
+      </div>
+

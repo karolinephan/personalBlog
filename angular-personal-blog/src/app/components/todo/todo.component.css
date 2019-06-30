@@ -5,3 +5,17 @@
     background-color: #588c7e;
     color: white;
 }
+
+.btn{
+    margin: 10px;
+}
+
+.strike {
+    text-decoration: line-through;
+  }
+  .bold {
+      font-weight: bold;
+  }
+  .red {
+      color: red;
+  }

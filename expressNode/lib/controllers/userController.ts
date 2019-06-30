@@ -6,8 +6,7 @@ const User = mongoose.model('User', userSchema);
 
 export class UserController {
 
-    public addUser(req: Request, res: Response) 
-    {
+    public addUser(req: Request, res: Response) {
         let newUser = new User(req.body);
 
         newUser.save((err, user) => {
@@ -18,10 +17,8 @@ export class UserController {
         });
     }
 
-    public getUserById(req: Request, res: Response)
-    {
-        User.findById(req.params.userId, (err, user) =>
-        {
+    public getUserById(req: Request, res: Response) {
+        User.findById(req.params.userId, (err, user) => {
             if (err) {
                 res.send(err);
             }

@@ -17,6 +17,7 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { ChecklistComponent } from './components/checklist/checklist.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
     TodoListComponent,
     TodoComponent,
     ContactComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    ChecklistComponent
   ],
   imports: [
     BrowserModule,
