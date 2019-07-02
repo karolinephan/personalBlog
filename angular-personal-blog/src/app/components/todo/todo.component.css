@@ -2,8 +2,10 @@
     margin-right: 100px;
     margin-left: 100px;
     margin-top: 30px;
-    background-color: #588c7e;
-    color: white;
+}
+
+.card-header{
+    font-size: 20px;
 }
 
 .btn{
@@ -19,3 +21,4 @@
   .red {
       color: red;
   }
+

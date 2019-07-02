@@ -37,7 +37,7 @@ export class ChecklistController {
     }
 
     public getChecklistByTodoId(req: Request, res: Response) {
-        Checklist.find({"todoId": mongoose.Types.ObjectId.ObjectId(req.params.todoId)}, (err, checklist) => {
+        Checklist.find({ "todoId": mongoose.Types.ObjectId.ObjectId(req.params.todoId) }, (err, checklist) => {
             if (err) {
                 res.send(err);
             }
@@ -45,12 +45,25 @@ export class ChecklistController {
         });
     }
 
-    public deleteChecklist(req: Request, res: Response) {           
-        Checklist.deleteOne({ _id: req.params.checklistId }, 
+    public deleteChecklist(req: Request, res: Response) {
+        Checklist.deleteOne({ _id: req.params.checklistId },
             (err, record) => {
-            if(err){
-                res.send(err);
-            }
-        });
+                if (err) {
+                    res.send(err);
+                }
+            });
+    }
+
+    public updateChecklist(req: Request, res: Response) {
+        Checklist.findOneAndUpdate({ _id: req.params.checklistId },
+            req.body,
+            { new: true },
+            (err, checklist) => {
+                if (err) {
+                    res.send(err);
+                }
+                res.json(checklist);
+            })
     }
 }
+

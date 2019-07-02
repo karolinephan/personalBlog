@@ -1,0 +1,4 @@
+#cbox:checked + label {
+    color: gray;
+    text-decoration: line-through;
+}

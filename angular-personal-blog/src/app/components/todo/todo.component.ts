@@ -23,7 +23,7 @@ export class TodoComponent implements OnInit {
   //create a delete emitter to notify todo-list to refresh the page
   @Output() deletedEmitter = new EventEmitter<boolean>();
 
-  //inject ChecklistService
+  //inject ChecklistService, todoService
   constructor(
     private checklistService: ChecklistService, 
     private todoService: TodoService,
@@ -36,13 +36,14 @@ export class TodoComponent implements OnInit {
 
   //call addChecklist from service to add new checklist to server
   addChecklist(
-    todoId: HTMLInputElement,
     checklistName: HTMLInputElement) {
 
     // create new post from the user input
     let newChecklist = new Checklist(
-      todoId.value,
+      this.todo._id.valueOf(),
       checklistName.value,
+      // set initial isDone = false
+      false
     );
 
     this.checklistService.addChecklist(newChecklist)

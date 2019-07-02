@@ -17,6 +17,7 @@ export class ChecklistService {
   private getChecklistUrl = 'http://localhost:8080/checklist';
   private getChecklistByTodoIdUrl = 'http://localhost:8080/checklist/todo/';
   private deleteChecklistUrl = 'http://localhost:8080/checklist/';
+  private updateChecklistUrl = 'http://localhost:8080/checklist/';
 
   //inject HttpCLient to constructor
   constructor(private http: HttpClient) { }
@@ -39,5 +40,10 @@ export class ChecklistService {
   //get all checklists
   getChecklist(): Observable<Checklist[]> {
     return this.http.get<Checklist[]>(this.getChecklistUrl);
+  }
+
+  //update checklist
+  updateChecklist(checklistId: string, checklist: Checklist): Observable<{}> {
+    return this.http.put<Checklist>(this.updateChecklistUrl + checklistId, checklist);
   }
 }

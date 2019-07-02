@@ -80,6 +80,8 @@ export class Routes {
             .get(this.checklistController.getChecklistById)
             //delete a checklist
             .delete(this.checklistController.deleteChecklist)
+            //update a checklist
+            .put(this.checklistController.updateChecklist)
         
         app.route('/checklist/todo/:todoId')
             //get checklist by todo ID

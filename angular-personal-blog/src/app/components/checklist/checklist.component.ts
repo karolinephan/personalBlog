@@ -15,8 +15,26 @@ export class ChecklistComponent implements OnInit {
   //get input of checklist from todo component
   @Input() checklist: Checklist;
 
-  constructor() { }
+  //inject ChecklistService
+  constructor(private checklistService: ChecklistService) { }
 
   ngOnInit() {}
+
+  checked(): void {
+    //if checklist is already marked DONE => mark it undone
+    if(this.checklist.isDone) {
+      this.checklist.isDone = false;
+    }
+    // otherwise, mark it as done if it's not done yet
+    else {
+      this.checklist.isDone = true;
+    }
+
+    //call checklist service to update checklist to server
+    //append updated checklist with updated isDone boolean to the body 
+    this.checklistService.updateChecklist(this.checklist._id.valueOf(), this.checklist)
+      .subscribe();
+    
+  }
 
 }

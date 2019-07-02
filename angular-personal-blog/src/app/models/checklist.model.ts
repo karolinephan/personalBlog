@@ -1,9 +1,13 @@
 export class Checklist {
+    _id: String
     todoId: String;
     checklistName: String;
+    isDone: boolean;
 
-    constructor(todoId: string, checklistName: string) {
+    constructor(todoId: string, checklistName: string, isDone: boolean, checklistId?: String) {
         this.todoId = todoId;
-        checklistName = checklistName;
+        this.checklistName = checklistName;
+        this.isDone = isDone;
+        if(checklistId) {this._id = checklistId}
     }
 }

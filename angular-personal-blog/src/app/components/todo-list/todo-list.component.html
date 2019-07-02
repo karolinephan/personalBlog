@@ -28,7 +28,7 @@
                         <textarea class="form-control" #inputTodoDescription rows="4"></textarea>
                         <br>
                         <!--submit button-->
-                        <button type="button" class="btn btn-lg btn-block btn-outline-dark"
+                        <button type="button" class="btn btn-lg btn-block"
                             (click)="addTodo(inputTodoName,inputTodoDescription,inputStartDate,inputEndDate);">
                             Submit
                         </button>
@@ -48,3 +48,7 @@
     <app-todo [todo]="todo" (deletedEmitter)="ngOnInit()">
     </app-todo>
 </div>
+
+
+
+
