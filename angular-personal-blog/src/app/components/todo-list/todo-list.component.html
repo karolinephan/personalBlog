@@ -1,10 +1,10 @@
 <!--title-->
-<h1>&#x261E; To-do List &#x2611;</h1>
+<h1>&#x2611; To-do List</h1>
 
-<!--form-->
-<div class="d-flex justify-content-center">
-    <div class="card form-container">
-        <div class="card-header text-center">
+<div class="container">
+    <!--form-->
+    <div class="card">
+        <div class=" card-header text-center">
             &#x2b; ADD A TO-DO
         </div>
         <div class="card-body">
@@ -14,21 +14,26 @@
                         <!--todo name-->
                         <label for="inputTodoName">To-do Name</label>
                         <input type="text" class="form-control" #inputTodoName>
+                    </div>
+                    <div class="form-group col-md-3">
                         <!--start date-->
                         <label for="inputStartDate">Start Date</label>
                         <input type="date" class="form-control" #inputStartDate>
+                    </div>
+                    <div class="form-group col-md-3">
                         <!--end date-->
                         <label for="inputEndDate">End Date</label>
                         <input type="date" class="form-control" #inputEndDate>
                     </div>
-
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-10">
                         <!--description-->
                         <label for="inputTodoDescription">Description</label>
-                        <textarea class="form-control" #inputTodoDescription rows="4"></textarea>
+                        <input type="text" class="form-control" #inputTodoDescription>
+                    </div>
+                    <div  class="form-group col-md-2">
                         <br>
                         <!--submit button-->
-                        <button type="button" class="btn btn-lg btn-block"
+                        <button type="button" class="btn btn-secondary btn-lg btn-block"
                             (click)="addTodo(inputTodoName,inputTodoDescription,inputStartDate,inputEndDate);">
                             Submit
                         </button>
@@ -37,18 +42,15 @@
             </form>
         </div>
     </div>
+
+    <!--list all todo cards-->
+    <div class="row">
+        <div class="col-md-6" *ngFor="let todo of todos">
+            <!--input for child and output from child are all in html-->
+            <!--[todo] is input for todo-->
+            <!--(deletedEmitter) is output from todo. when deletedEmitter emited, parent calls ngOnInit-->
+            <app-todo [todo]="todo" (deletedEmitter)="ngOnInit()"></app-todo>
+        </div>
+    </div>
 </div>
-
-
-<!--list all todo cards-->
-<div *ngFor="let todo of todos">
-    <!--input for child and output from child are all in html-->
-    <!--[todo] is input for todo-->
-    <!--(deletedEmitter) is output from todo. when deletedEmitter emited, parent calls ngOnInit-->
-    <app-todo [todo]="todo" (deletedEmitter)="ngOnInit()">
-    </app-todo>
-</div>
-
-
-
 
